@@ -19,6 +19,9 @@ const ls = (arr, cb)=> {
   });
 }
 
+//so we don't need two arguements but this means 
+//we can call them all the same??
+//cb most be the console.log (if/esle staement in shell just not entirely sure how)
 const pwd = (arr, cb)=> {
   cb(null, __dirname);
 };
@@ -63,7 +66,9 @@ const run = (str, cb)=> {
   }
   //presumably runs it by I am a little confused how
   else {
-    console.log(parts.slice(1));
+    //console.log(parts.slice(1));
+    //so sending the command the rest of the array and cb (call back??)
+    //is the if/else statement in the shell the cb??
     command(parts.slice(1), cb);
   }
 };
