@@ -47,17 +47,29 @@ const _commands = {
   pwd
 };
 
+
+//ok so run is a function prof built
 const run = (str, cb)=> {
+  //turns string into array
   const parts = str.trim().split(' ');
+  //looks for command in first part 
+  //console.log(parts);
+  //command is an object so this call will or will not work
   const command = _commands[parts[0]];
+  //console.log(command);
+  //throws error
   if(!command){
     cb(`${ parts[0] } command not found`);
   }
+  //presumably runs it by I am a little confused how
   else {
+    console.log(parts.slice(1));
     command(parts.slice(1), cb);
   }
 };
 
+//this is needed to export it (essentially magic to me)
 module.exports = {
+  //so confused why is it not taking arguements
   run
 };
